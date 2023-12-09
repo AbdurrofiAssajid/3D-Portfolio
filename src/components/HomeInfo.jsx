@@ -18,7 +18,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center'>
-          Worked with many companies <br /> and picked up many skills along the way
+        Just a student whose love to code, <br /> Curious about me?
         </p>
 
         <Link to='/about' className='neo-brutalism-white neo-btn'>
@@ -33,7 +33,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          Led multiple projects to success over the years. <br /> Curious about the impact?
+          Welcome to my personal portfolio website, <br /> enjoy the animation
         </p>
 
         <Link to='/projects' className='neo-brutalism-white neo-btn'>
@@ -48,7 +48,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
       <p className='font-medium sm:text-xl text-center'>
-        Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
+        Need a project done or looking for a dev? <br/> hiring me is the best choices
       </p>
 
       <Link to='/contact' className='neo-brutalism-white neo-btn'>

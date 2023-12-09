@@ -7,10 +7,10 @@ import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
 
 const Contact = () => {
-  const formRef = useRef();
+  const formRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const { alert, showAlert, hideAlert } = useAlert();
-  const [loading, setLoading] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
   const handleChange = ({ target: { name, value } }) => {
@@ -22,7 +22,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsLoading(true);
     setCurrentAnimation("hit");
 
     emailjs
@@ -40,7 +40,7 @@ const Contact = () => {
       )
       .then(
         () => {
-          setLoading(false);
+          setIsLoading(false);
           showAlert({
             show: true,
             text: "Thank you for your message 😃",
@@ -58,7 +58,7 @@ const Contact = () => {
           }, [3000]);
         },
         (error) => {
-          setLoading(false);
+          setIsLoading(false);
           console.error(error);
           setCurrentAnimation("idle");
 
@@ -127,12 +127,12 @@ const Contact = () => {
 
           <button
             type='submit'
-            disabled={loading}
+            disabled={isloading}
             className='btn'
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
-            {loading ? "Sending..." : "Submit"}
+            {isloading ? "Sending..." : "Submit"}
           </button>
         </form>
       </div>
